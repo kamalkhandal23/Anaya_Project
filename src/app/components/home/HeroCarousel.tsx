@@ -1,9 +1,9 @@
 import Slider from "react-slick";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
-import hero1 from "../../images/img1.png";
-import hero2 from "../../images/img2.png";
-import hero3 from "../../images/img3.png";
+import hero1 from "../../images/img1.webp";
+import hero2 from "../../images/img2.webp";
+import hero3 from "../../images/img3.webp";
 
 export default function HeroCarousel() {
   const heroSettings = {
