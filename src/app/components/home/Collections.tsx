@@ -29,39 +29,33 @@ export default function Collections() {
   const collectionSettings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 700,
     slidesToShow: 3,
     slidesToScroll: 1,
-  
-    autoplay: true,          // ✅ auto slide ON
-    autoplaySpeed: 1000,     // ✅ 1 second
-    pauseOnHover: false,     // ✅ hover par bhi chalta rahe
+
+    autoplay: true,
+    autoplaySpeed: 1000,
+    pauseOnHover: false,
     pauseOnFocus: false,
-  
+
     arrows: false,
     swipe: true,
     draggable: true,
-  
+
     responsive: [
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
-      },
-      {
-        breakpoint: 640,
-        settings: { slidesToShow: 1 },
-      },
+      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
   };
-  
 
   return (
-    <section id="collections" className="py-20 lg:py-32">
+    <section id="collections" className="py-20 lg:py-32 bg-[#FAFAF8]">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
+
         {/* Heading */}
         <div className="text-center mb-14">
           <h2
-            className="text-3xl lg:text-5xl text-gray-900 mb-3"
+            className="text-3xl lg:text-5xl mb-3"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             Our Collections
@@ -71,7 +65,7 @@ export default function Collections() {
           </p>
         </div>
 
-        {/* ================= DESKTOP (carousel) ================= */}
+        {/* ================= DESKTOP (Carousel) ================= */}
         <div className="hidden md:block">
           <Slider {...collectionSettings}>
             {collections.map((item, i) => (
@@ -80,7 +74,7 @@ export default function Collections() {
           </Slider>
         </div>
 
-        {/* ================= MOBILE (grid) ================= */}
+        {/* ================= MOBILE (La-Vie style grid) ================= */}
         <div className="grid grid-cols-2 gap-4 md:hidden">
           {collections.map((item, i) => (
             <MobileCard key={i} {...item} />
@@ -91,12 +85,15 @@ export default function Collections() {
         <div className="text-center mt-16">
           <Link
             to="/product"
-            className="inline-block px-10 py-3 border border-gray-900 text-gray-900 text-xs tracking-widest uppercase hover:bg-gray-900 hover:text-white transition"
+            className="inline-block px-10 py-3 border border-gray-900 
+                       text-gray-900 text-xs tracking-widest uppercase
+                       hover:bg-gray-900 hover:text-white transition"
             style={{ fontFamily: "Playfair Display, serif" }}
           >
             View All Products
           </Link>
         </div>
+
       </div>
     </section>
   );
@@ -107,15 +104,22 @@ function DesktopCard({ title, img, link }: any) {
   return (
     <div className="px-4">
       <a href={link} className="group block">
-        <div className="relative h-[420px] overflow-hidden mb-5">
+
+        <div
+          className="relative h-[420px] mb-5 overflow-hidden rounded-xl
+                     shadow-lg shadow-black/20
+                     group-hover:shadow-2xl transition-all duration-300"
+        >
           <ImageWithFallback
             src={img}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition"
+            className="w-full h-full object-cover 
+                       group-hover:scale-105 transition duration-500"
           />
 
-          {/* 👇 IMPORTANT FIX */}
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition pointer-events-none" />
+          {/* overlay */}
+          <div className="absolute inset-0 bg-black/15 
+                          group-hover:bg-black/25 transition pointer-events-none" />
         </div>
 
         <h3
@@ -127,17 +131,22 @@ function DesktopCard({ title, img, link }: any) {
         <p className="text-center text-sm text-gray-500">
           Explore Collection
         </p>
+
       </a>
     </div>
   );
 }
 
-
-/* ================= MOBILE CARD (La Vie style) ================= */
+/* ================= MOBILE CARD ================= */
 function MobileCard({ title, img, link }: any) {
   return (
-    <a href={link} className="block bg-white p-2">
-      <div className="h-[150px] mb-2 overflow-hidden">
+    <a
+      href={link}
+      className="block bg-white rounded-lg p-2
+                 shadow-md shadow-black/15
+                 hover:shadow-lg transition"
+    >
+      <div className="h-[140px] mb-2 overflow-hidden rounded-md">
         <ImageWithFallback
           src={img}
           alt={title}

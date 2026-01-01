@@ -61,7 +61,12 @@ export default function BestSellers() {
         {/* ================= MOBILE LIST ================= */}
         <div className="space-y-6 lg:hidden">
           {products.map((p, i) => (
-            <div key={i} className="flex gap-4 bg-[#FAFAF8] p-4">
+            <div
+            key={i}
+            className="flex gap-4 bg-[#FAFAF8] p-4 rounded-lg
+                       shadow-md shadow-black/10"
+          >
+          
               <div className="w-28 h-32 flex-shrink-0 overflow-hidden">
                 <ImageWithFallback
                   src={p.img}
@@ -106,9 +111,14 @@ export default function BestSellers() {
                   className="group"
                 >
                   <div
-                    className="relative h-[380px] mb-6 bg-[#FAFAF8] overflow-hidden"
-                    style={{ perspective: "1000px" }}
-                  >
+  className="relative h-[380px] mb-6 overflow-hidden rounded-xl
+             bg-[#FAFAF8]
+             shadow-lg shadow-black/15
+             group-hover:shadow-2xl group-hover:shadow-black/25
+             transition-all duration-300"
+  style={{ perspective: "1000px" }}
+>
+
                     <motion.div
                       whileHover={{ rotateY: 5, rotateX: 5 }}
                       transition={{ duration: 0.4 }}

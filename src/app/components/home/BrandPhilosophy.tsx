@@ -42,7 +42,10 @@ export default function BrandPhilosophy() {
                       transition={{ duration: 0.8 }}
                       viewport={{ once: true }}
                     >
-                      <div className="relative h-[400px] lg:h-[500px] overflow-hidden">
+                      <div className="relative h-[400px] lg:h-[500px] overflow-hidden shadow-md shadow-black/10
+hover:shadow-xl hover:shadow-black/20
+rounded-xl
+transition">
                         <ImageWithFallback
                           src="https://images.unsplash.com/photo-1664470740442-f5de3e512e8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJmdW1lJTIwbm90ZXMlMjBpbmdyZWRpZW50c3xlbnwxfHx8fDE3NjcwODY0NDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                           alt="Philosophy"
