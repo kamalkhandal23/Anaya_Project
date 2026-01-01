@@ -1,0 +1,32 @@
+.offer-bar {
+    width: 100%;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .offer-track {
+    display: inline-flex;
+    gap: 40px;
+    animation: marquee 18s linear infinite;
+  }
+  
+  .offer-track span {
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
